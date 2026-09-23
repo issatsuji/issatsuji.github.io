@@ -10,7 +10,7 @@ const portfolioData = {
         title: "空蝉",
         type: "Short Film",
         year: "2026",
-        image: "'/Users/issa/Documents/自主制作/空蝉(soon)/IMG_0028.JPG'",
+        image: "Users/issa/Documents/自主制作/空蝉(soon)/IMG_0028.JPG",
         link: null
       },
       {
@@ -34,14 +34,14 @@ const portfolioData = {
         title: "pretty girl has problems/isa",
         type: "Music Video",
         year: "2026",
-        image: "'/Users/issa/Documents/自主制作/isa movie_data(edit)/hqdefault.avif'",
+        image: "Users/issa/Documents/自主制作/isa movie_data(edit)/hqdefault.avif",
         link: "https://youtu.be/Uc3BdeECWoQ?si=KhxRzBAifdvDP-SL"
       },
       {
         title: "かなオリ/奏音",
         type: "Music Video",
         year: "2026",
-        image: "'/Users/issa/Documents/自主制作/kanato(done)/hq720.avif'",
+        image: "Users/issa/Documents/自主制作/kanato(done)/hq720.avif",
         link: "https://youtu.be/ngUHxcpQbZs?si=BBxCxCq0zR2zDbsF"
       },
       {
