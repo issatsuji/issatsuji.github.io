@@ -10,14 +10,14 @@ const portfolioData = {
   filmed: {
     indieFilms: [
       {
-        title: "今日の友は、明日の敵。",
+        title: "空蝉",
         type: "Short Film",
         year: "2026",
-        image: "images/filmed/today-friend.jpg",
+        image: "images/filmed/IMG_0028.JPG",
         link: null,
       },
       {
-        title: "Film Project 02",
+        title: "今日の友は、明日の敵。",
         type: "Short Film",
         year: "2026",
         image: "images/filmed/film-02.jpg",
@@ -34,18 +34,18 @@ const portfolioData = {
 
     musicVideos: [
       {
-        title: "かなおり",
+        title: "pretty girll has problems/isa",
         type: "Music Video",
         year: "2026",
-        image: "images/music-video/kanaori.jpg",
-        link: "https://www.youtube.com/watch?v=REPLACE_WITH_YOUR_VIDEO_ID",
+        image: "images/music-video/hqdefault.avif",
+        link: "https://youtu.be/Uc3BdeECWoQ?si=OoFTwtVbjjdF9oE3",
       },
       {
-        title: "Music Video 02",
+        title: "かなオリ",
         type: "Music Video",
         year: "2026",
-        image: "images/music-video/mv-02.jpg",
-        link: "https://www.youtube.com/watch?v=REPLACE_WITH_YOUR_VIDEO_ID",
+        image: "images/music-video/hq720.avif",
+        link: "https://youtu.be/ngUHxcpQbZs?si=Ult0odd6VN4g-sPH",
       },
       {
         title: "Music Video 03",
