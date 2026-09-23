@@ -2,15 +2,34 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="ISSA TSUJI — Film / Cinematography"
+  >
 
   <title>ISSA TSUJI — Film / Cinematography</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400&family=Shippori+Mincho:wght@400&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
+    /* ==================================================
+       RESET
+    ================================================== */
+
     * {
       margin: 0;
       padding: 0;
@@ -22,12 +41,18 @@
     }
 
     body {
-      background: #fafaf8;
+      background: #faf9f6;
       color: #111111;
-      font-family: "Manrope", sans-serif;
+      font-family: "DM Sans", sans-serif;
       font-weight: 300;
-      letter-spacing: 0.02em;
       line-height: 1.6;
+      letter-spacing: 0.02em;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     a {
@@ -35,317 +60,737 @@
       text-decoration: none;
     }
 
-    /* --------------------
-       HEADER
-    -------------------- */
 
-    header {
+    /* ==================================================
+       HEADER
+    ================================================== */
+
+    .header {
       position: fixed;
       top: 0;
       left: 0;
+
       width: 100%;
-      padding: 28px 40px;
+
+      padding: 28px 42px;
+
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      z-index: 100;
-      mix-blend-mode: multiply;
+
+      z-index: 1000;
+
+      background: rgba(250, 249, 246, 0.88);
+
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
-    .logo {
-      font-size: 14px;
-      letter-spacing: 0.12em;
-      font-weight: 400;
+    .site-name {
+      font-size: 15px;
+      letter-spacing: 0.22em;
+      font-weight: 300;
     }
 
-    nav {
+    .navigation {
       display: flex;
-      gap: 30px;
-      font-size: 11px;
-      letter-spacing: 0.12em;
+      gap: 34px;
+
+      font-size: 10px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
     }
 
-    nav a {
+    .navigation a {
       position: relative;
+      padding-bottom: 5px;
     }
 
-    nav a::after {
+    .navigation a::after {
       content: "";
+
       position: absolute;
+
       left: 0;
-      bottom: -5px;
+      bottom: 0;
+
       width: 0;
       height: 1px;
-      background: #111;
+
+      background: #111111;
+
       transition: width 0.3s ease;
     }
 
-    nav a:hover::after {
+    .navigation a:hover::after {
       width: 100%;
     }
 
-    /* --------------------
+
+    /* ==================================================
+       MAIN
+    ================================================== */
+
+    main {
+      width: 100%;
+    }
+
+
+    /* ==================================================
        HERO
-    -------------------- */
+    ================================================== */
 
     .hero {
       min-height: 100vh;
-      padding: 40px;
+
+      padding:
+        160px 8vw
+        80px 8vw;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       position: relative;
     }
 
     .hero-title {
-      font-size: clamp(52px, 10vw, 150px);
+      font-size: clamp(64px, 11vw, 170px);
+
       font-weight: 300;
-      letter-spacing: -0.055em;
-      line-height: 0.9;
+
+      letter-spacing: -0.07em;
+
+      line-height: 0.82;
     }
 
     .hero-subtitle {
-      margin-top: 30px;
-      font-size: 12px;
-      letter-spacing: 0.18em;
+      margin-top: 42px;
+
+      font-size: 11px;
+
+      letter-spacing: 0.28em;
+
       text-transform: uppercase;
-      color: #555;
+
+      color: #555555;
     }
 
-    .scroll {
+    .scroll-indicator {
       position: absolute;
-      bottom: 35px;
-      left: 40px;
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      color: #777;
+
+      bottom: 40px;
+      left: 8vw;
+
+      font-size: 9px;
+
+      letter-spacing: 0.22em;
+
       text-transform: uppercase;
+
+      color: #777777;
     }
 
-    /* --------------------
-       WORKS
-    -------------------- */
 
-    section {
-      padding: 150px 40px;
+    /* ==================================================
+       WORK SECTION
+    ================================================== */
+
+    .works-section {
+      padding: 130px 8vw 180px;
     }
 
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 80px;
+    .category {
+      margin-bottom: 150px;
     }
 
-    .section-title {
-      font-size: 12px;
-      letter-spacing: 0.16em;
+    .category:last-child {
+      margin-bottom: 0;
+    }
+
+    .category-title {
+      margin-bottom: 38px;
+
+      font-size: clamp(30px, 4vw, 58px);
+
+      font-weight: 300;
+
+      font-style: italic;
+
+      letter-spacing: -0.04em;
+    }
+
+    .category-subtitle {
+      margin-left: 4px;
+      margin-bottom: 52px;
+
+      font-size: 11px;
+
+      letter-spacing: 0.2em;
+
       text-transform: uppercase;
+
+      color: #777777;
     }
 
-    .section-number {
-      font-size: 10px;
-      color: #888;
+
+    /* ==================================================
+       FILMED
+    ================================================== */
+
+    .filmed-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 70px 9vw;
+
+      align-items: start;
     }
 
-    .works {
-      display: flex;
-      flex-direction: column;
-      gap: 140px;
-    }
-
-    .work {
+    .filmed-item {
       display: block;
+
+      width: 100%;
+
+      max-width: 460px;
     }
 
-    .work-image {
+    .filmed-item:nth-child(2) {
+      margin-top: 90px;
+    }
+
+    .poster-frame {
       width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #e8e8e5;
+
+      aspect-ratio: 2 / 3;
+
       overflow: hidden;
+
+      background: #e9e7e2;
+
       position: relative;
     }
 
-    .work-image::before {
-      content: "PROJECT IMAGE";
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      color: #999;
-    }
-
-    .work-image img {
+    .poster-frame img {
       width: 100%;
       height: 100%;
+
       object-fit: cover;
-      display: block;
-      transition: transform 0.8s cubic-bezier(.2,.7,.2,1);
+
+      transition:
+        transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
     }
 
-    .work:hover .work-image img {
-      transform: scale(1.025);
+    /*
+      FILMEDはクリック不可。
+      カーソルを合わせたときだけ少し拡大。
+    */
+
+    .filmed-item:hover .poster-frame img {
+      transform: scale(1.035);
     }
 
-    .work-info {
+    .project-info {
+      margin-top: 18px;
+
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-top: 18px;
+
+      gap: 30px;
     }
 
-    .work-title {
-      font-size: clamp(24px, 3vw, 42px);
-      font-weight: 300;
-      letter-spacing: -0.035em;
+    .project-title {
+      font-family: "Shippori Mincho", serif;
+
+      font-size: 21px;
+
+      font-weight: 400;
+
+      line-height: 1.5;
     }
 
-    .work-meta {
+    .project-meta {
+      flex-shrink: 0;
+
       text-align: right;
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      color: #777;
+
+      font-size: 9px;
+
+      letter-spacing: 0.15em;
+
       text-transform: uppercase;
+
+      color: #777777;
+
       line-height: 1.8;
     }
 
-    /* --------------------
-       ABOUT
-    -------------------- */
 
-    .about {
-      border-top: 1px solid #d8d8d4;
+    /* ==================================================
+       MUSIC VIDEO
+    ================================================== */
+
+    .music-video-item {
+      width: 100%;
+      max-width: 980px;
     }
 
-    .about-content {
-      max-width: 900px;
+    .video-wrapper {
+      width: 100%;
+
+      aspect-ratio: 16 / 9;
+
+      background: #e9e7e2;
+
+      overflow: hidden;
+
+      position: relative;
     }
 
-    .about-lead {
-      font-size: clamp(34px, 5vw, 72px);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-      font-weight: 300;
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+
+      border: 0;
+
+      display: block;
     }
 
-    .about-text {
-      margin-top: 60px;
-      max-width: 550px;
-      font-size: 14px;
-      line-height: 2;
-      color: #555;
-    }
+    .video-info {
+      margin-top: 20px;
 
-    /* --------------------
-       CONTACT
-    -------------------- */
-
-    .contact {
-      min-height: 70vh;
-      border-top: 1px solid #d8d8d4;
       display: flex;
+      justify-content: space-between;
+
+      align-items: flex-start;
+
+      gap: 30px;
+    }
+
+    .video-title {
+      font-family: "Shippori Mincho", serif;
+
+      font-size: 25px;
+
+      font-weight: 400;
+    }
+
+
+    /* ==================================================
+       EDIT
+    ================================================== */
+
+    .edit-list {
+      display: flex;
+
       flex-direction: column;
-      justify-content: space-between;
+
+      gap: 0;
     }
 
-    .contact-mail {
-      font-size: clamp(28px, 5vw, 70px);
-      letter-spacing: -0.04em;
-      font-weight: 300;
-      word-break: break-word;
+    .edit-item {
+      display: grid;
+
+      grid-template-columns:
+        80px
+        minmax(180px, 1fr)
+        auto;
+
+      align-items: center;
+
+      gap: 30px;
+
+      padding: 30px 0;
+
+      border-top: 1px solid #d5d3ce;
+
+      transition:
+        padding 0.35s ease;
     }
 
-    .contact-bottom {
-      display: flex;
-      justify-content: space-between;
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      color: #777;
+    .edit-item:last-child {
+      border-bottom: 1px solid #d5d3ce;
+    }
+
+    .edit-item:hover {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .edit-number {
+      font-size: 9px;
+
+      letter-spacing: 0.18em;
+
+      color: #888888;
+    }
+
+    .edit-title {
+      font-family: "Shippori Mincho", serif;
+
+      font-size: 23px;
+
+      font-weight: 400;
+    }
+
+    .edit-meta {
+      font-size: 9px;
+
+      letter-spacing: 0.16em;
+
+      text-transform: uppercase;
+
+      color: #777777;
+    }
+
+
+    /* ==================================================
+       ABOUT
+    ================================================== */
+
+    .about-section {
+      padding:
+        160px 8vw
+        180px 8vw;
+
+      border-top: 1px solid #d5d3ce;
+    }
+
+    .about-title {
+      margin-bottom: 70px;
+
+      font-size: 11px;
+
+      letter-spacing: 0.22em;
+
       text-transform: uppercase;
     }
 
-    /* --------------------
+    .about-lead {
+      max-width: 900px;
+
+      font-size: clamp(38px, 6vw, 82px);
+
+      font-weight: 300;
+
+      letter-spacing: -0.055em;
+
+      line-height: 1.02;
+    }
+
+    .about-text {
+      max-width: 570px;
+
+      margin-top: 70px;
+
+      font-size: 13px;
+
+      line-height: 2;
+
+      color: #555555;
+    }
+
+
+    /* ==================================================
+       CONTACT
+    ================================================== */
+
+    .contact-section {
+      min-height: 80vh;
+
+      padding:
+        130px 8vw
+        50px 8vw;
+
+      border-top: 1px solid #d5d3ce;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+    }
+
+    .contact-title {
+      font-size: 11px;
+
+      letter-spacing: 0.22em;
+
+      text-transform: uppercase;
+    }
+
+    .contact-mail {
+      display: inline-block;
+
+      margin-top: 80px;
+
+      font-size: clamp(30px, 5vw, 72px);
+
+      font-weight: 300;
+
+      letter-spacing: -0.05em;
+
+      transition: opacity 0.3s ease;
+    }
+
+    .contact-mail:hover {
+      opacity: 0.5;
+    }
+
+    .footer {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-end;
+
+      font-size: 9px;
+
+      letter-spacing: 0.16em;
+
+      text-transform: uppercase;
+
+      color: #777777;
+    }
+
+
+    /* ==================================================
+       IMAGE PLACEHOLDER
+    ================================================== */
+
+    /*
+      画像をまだアップロードしていない場合でも
+      ページ自体が崩れないようにする。
+    */
+
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      color: #999999;
+
+      font-size: 9px;
+
+      letter-spacing: 0.2em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* ==================================================
        MOBILE
-    -------------------- */
+    ================================================== */
 
     @media (max-width: 700px) {
 
-      header {
+      .header {
         padding: 22px 20px;
       }
 
-      nav {
+      .site-name {
+        font-size: 12px;
+      }
+
+      .navigation {
         gap: 15px;
+
+        font-size: 8px;
       }
 
       .hero {
-        padding: 20px;
+        padding:
+          130px 20px
+          60px 20px;
       }
 
       .hero-title {
-        font-size: 19vw;
+        font-size: 21vw;
+
+        letter-spacing: -0.08em;
       }
 
-      .scroll {
+      .hero-subtitle {
+        margin-top: 30px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.2em;
+      }
+
+      .scroll-indicator {
         left: 20px;
         bottom: 25px;
       }
 
-      section {
-        padding: 100px 20px;
+      .works-section {
+        padding:
+          90px 20px
+          120px;
       }
 
-      .section-header {
-        margin-bottom: 45px;
+      .category {
+        margin-bottom: 110px;
       }
 
-      .works {
-        gap: 90px;
+      .category-title {
+        margin-bottom: 25px;
       }
 
-      .work-info {
+      .category-subtitle {
+        margin-bottom: 35px;
+      }
+
+      .filmed-grid {
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+      }
+
+      .filmed-item {
+        max-width: 82%;
+      }
+
+      .filmed-item:nth-child(2) {
+        margin-top: 0;
+        margin-left: auto;
+      }
+
+      .project-info {
         flex-direction: column;
-        gap: 10px;
+
+        gap: 8px;
       }
 
-      .work-meta {
+      .project-meta {
         text-align: left;
       }
 
-      .about-lead {
-        font-size: 11vw;
+      .project-title {
+        font-size: 18px;
       }
 
-      .contact-bottom {
+      .video-title {
+        font-size: 21px;
+      }
+
+      .video-info {
         flex-direction: column;
-        gap: 15px;
+
+        gap: 8px;
+      }
+
+      .edit-item {
+        grid-template-columns:
+          45px
+          1fr;
+
+        gap: 12px;
+      }
+
+      .edit-meta {
+        grid-column: 2;
+      }
+
+      .edit-title {
+        font-size: 18px;
+      }
+
+      .about-section {
+        padding:
+          100px 20px
+          120px;
+      }
+
+      .about-lead {
+        font-size: 12vw;
+      }
+
+      .about-text {
+        margin-top: 50px;
+
+        font-size: 12px;
+      }
+
+      .contact-section {
+        min-height: 70vh;
+
+        padding:
+          100px 20px
+          30px;
+      }
+
+      .contact-mail {
+        margin-top: 50px;
+
+        font-size: 10vw;
+      }
+
+      .footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
       }
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- HEADER -->
 
-  <header>
-    <a href="#" class="logo">ISSA TSUJI</a>
+  <!-- ==================================================
+       HEADER
+  ================================================== -->
 
-    <nav>
-      <a href="#works">Works</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+  <header class="header">
+
+    <a
+      href="#top"
+      class="site-name"
+    >
+      ISSA TSUJI
+    </a>
+
+    <nav class="navigation">
+
+      <a href="#works">
+        Works
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
     </nav>
+
   </header>
 
 
-  <!-- HERO -->
 
-  <main>
+  <!-- ==================================================
+       MAIN
+  ================================================== -->
+
+  <main id="top">
+
+
+    <!-- ==================================================
+         HERO
+    ================================================== -->
 
     <section class="hero">
 
@@ -358,112 +803,314 @@
         Film / Cinematography
       </p>
 
-      <div class="scroll">
+      <div class="scroll-indicator">
         Scroll ↓
       </div>
 
     </section>
 
 
-    <!-- WORKS -->
 
-    <section id="works">
+    <!-- ==================================================
+         WORKS
+    ================================================== -->
 
-      <div class="section-header">
-        <h2 class="section-title">Selected Works</h2>
-        <span class="section-number">01 — 02</span>
+    <section
+      id="works"
+      class="works-section"
+    >
+
+
+      <!-- ==================================================
+           FILMED
+      ================================================== -->
+
+      <div class="category">
+
+        <h2 class="category-title">
+          FILMED
+        </h2>
+
+        <p class="category-subtitle">
+          Indie Films
+        </p>
+
+
+        <div class="filmed-grid">
+
+
+          <!-- FILMED 01 -->
+
+          <div class="filmed-item">
+
+            <div class="poster-frame">
+
+              <!--
+                ここにポスター画像を入れる。
+
+                ファイル名を
+                filmed-01.jpg
+                にしてください。
+
+                imagesフォルダに入れた場合：
+                images/filmed-01.jpg
+              -->
+
+              <img
+                src="images/filmed-01.jpg"
+                alt="今日の友は、明日の敵。"
+                onerror="this.style.display='none';"
+              >
+
+              <div class="image-placeholder">
+                POSTER
+              </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <h3 class="project-title">
+                今日の友は、<br>
+                明日の敵。
+              </h3>
+
+              <div class="project-meta">
+                Short Film<br>
+                2026
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- FILMED 02 -->
+
+          <div class="filmed-item">
+
+            <div class="poster-frame">
+
+              <!--
+                2枚目のポスター。
+                ファイル名：
+                filmed-02.jpg
+              -->
+
+              <img
+                src="images/filmed-02.jpg"
+                alt="Film Project"
+                onerror="this.style.display='none';"
+              >
+
+              <div class="image-placeholder">
+                POSTER
+              </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <h3 class="project-title">
+                Film Project
+              </h3>
+
+              <div class="project-meta">
+                Short Film<br>
+                2026
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
       </div>
 
 
-      <div class="works">
 
-        <a href="#" class="work">
+      <!-- ==================================================
+           MUSIC VIDEO
+      ================================================== -->
 
-          <div class="work-image">
-            <!-- 後でここに作品画像を入れる -->
+      <div class="category">
+
+        <h2 class="category-title">
+          MUSIC VIDEO
+        </h2>
+
+
+        <div class="music-video-item">
+
+
+          <div class="video-wrapper">
+
+            <!--
+              ============================================
+              YOUTUBE VIDEO
+
+              下の VIDEO_ID を自分のMVのIDに変更。
+
+              例：
+              YouTubeのURLが
+
+              https://www.youtube.com/watch?v=ABCDEFG123
+
+              なら、
+
+              VIDEO_ID = ABCDEFG123
+
+              ============================================
+            -->
+
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID"
+              title="かなおり — Music Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            >
+            </iframe>
+
           </div>
 
-          <div class="work-info">
 
-            <h3 class="work-title">
+          <div class="video-info">
+
+            <h3 class="video-title">
               かなおり
             </h3>
 
-            <div class="work-meta">
+            <div class="project-meta">
               Music Video<br>
               2026
             </div>
 
           </div>
 
-        </a>
+        </div>
+
+      </div>
 
 
-        <a href="#" class="work">
 
-          <div class="work-image">
-            <!-- 後でここに作品画像を入れる -->
-          </div>
+      <!-- ==================================================
+           EDIT
+      ================================================== -->
 
-          <div class="work-info">
+      <div class="category">
 
-            <h3 class="work-title">
-              今日の友は、明日の敵。
+        <h2 class="category-title">
+          EDIT
+        </h2>
+
+
+        <div class="edit-list">
+
+
+          <div class="edit-item">
+
+            <span class="edit-number">
+              01
+            </span>
+
+            <h3 class="edit-title">
+              編集作品集
             </h3>
 
-            <div class="work-meta">
-              Short Film<br>
-              2026
-            </div>
+            <span class="edit-meta">
+              Edit / 2026
+            </span>
 
           </div>
 
-        </a>
+
+          <div class="edit-item">
+
+            <span class="edit-number">
+              02
+            </span>
+
+            <h3 class="edit-title">
+              Documentary
+            </h3>
+
+            <span class="edit-meta">
+              Edit / 2026
+            </span>
+
+          </div>
+
+
+        </div>
 
       </div>
+
 
     </section>
 
 
-    <!-- ABOUT -->
 
-    <section id="about" class="about">
+    <!-- ==================================================
+         ABOUT
+    ================================================== -->
 
-      <div class="section-header">
-        <h2 class="section-title">About</h2>
-        <span class="section-number">02</span>
-      </div>
+    <section
+      id="about"
+      class="about-section"
+    >
 
-      <div class="about-content">
+      <h2 class="about-title">
+        About
+      </h2>
 
-        <p class="about-lead">
-          Turning emotions<br>
-          into images.
-        </p>
 
-        <p class="about-text">
-          ISSA TSUJI is a filmmaker and cinematographer
-          interested in translating human emotions into images.
-          <br><br>
-          Currently studying film and working on independent
-          short films, music videos and documentary projects.
-        </p>
+      <p class="about-lead">
+        Turning emotions<br>
+        into images.
+      </p>
 
-      </div>
+
+      <p class="about-text">
+
+        ISSA TSUJI is a filmmaker and cinematographer
+        interested in translating human emotions into images.
+
+        <br><br>
+
+        Currently studying film and working on independent
+        short films, music videos and documentary projects.
+
+      </p>
 
     </section>
 
 
-    <!-- CONTACT -->
 
-    <section id="contact" class="contact">
+    <!-- ==================================================
+         CONTACT
+    ================================================== -->
+
+    <section
+      id="contact"
+      class="contact-section"
+    >
 
       <div>
 
-        <div class="section-header">
-          <h2 class="section-title">Contact</h2>
-          <span class="section-number">03</span>
-        </div>
+        <h2 class="contact-title">
+          Contact
+        </h2>
+
+
+        <!--
+          メールアドレスをここに変更。
+        -->
 
         <a
           href="mailto:YOUR-EMAIL@gmail.com"
@@ -474,17 +1121,24 @@
 
       </div>
 
-      <div class="contact-bottom">
 
-        <span>ISSA TSUJI — FILM / CINEMATOGRAPHY</span>
+      <footer class="footer">
 
-        <span>© 2026</span>
+        <span>
+          ISSA TSUJI — FILM / CINEMATOGRAPHY
+        </span>
 
-      </div>
+        <span>
+          © 2026
+        </span>
+
+      </footer>
 
     </section>
 
+
   </main>
+
 
 </body>
 </html>
