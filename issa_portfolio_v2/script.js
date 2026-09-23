@@ -38,7 +38,7 @@ const portfolioData = {
         link: "https://youtu.be/Uc3BdeECWoQ?si=KhxRzBAifdvDP-SL"
       },
       {
-        title: "かなオリ",
+        title: "かなオリ/奏音",
         type: "Music Video",
         year: "2026",
         image: "'/Users/issa/Documents/自主制作/kanato(done)/hq720.avif'",
