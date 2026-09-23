@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
@@ -26,9 +23,9 @@
 
   <style>
 
-    /* ==================================================
-       RESET
-    ================================================== */
+    /* =========================================================
+       BASIC RESET
+    ========================================================= */
 
     * {
       margin: 0;
@@ -42,17 +39,20 @@
 
     body {
       background: #faf9f6;
-      color: #111111;
+      color: #151515;
+
       font-family: "DM Sans", sans-serif;
       font-weight: 300;
-      line-height: 1.6;
+
+      line-height: 1.5;
       letter-spacing: 0.02em;
+
       overflow-x: hidden;
     }
 
     img {
       display: block;
-      max-width: 100%;
+      width: 100%;
     }
 
     a {
@@ -61,12 +61,13 @@
     }
 
 
-    /* ==================================================
+    /* =========================================================
        HEADER
-    ================================================== */
+    ========================================================= */
 
     .header {
       position: fixed;
+
       top: 0;
       left: 0;
 
@@ -86,132 +87,136 @@
       -webkit-backdrop-filter: blur(8px);
     }
 
-    .site-name {
-      font-size: 15px;
-      letter-spacing: 0.22em;
+    .logo {
+      font-size: 14px;
+
       font-weight: 300;
+
+      letter-spacing: 0.22em;
     }
 
-    .navigation {
+    .nav {
       display: flex;
-      gap: 34px;
+
+      gap: 32px;
 
       font-size: 10px;
+
       letter-spacing: 0.22em;
+
       text-transform: uppercase;
     }
 
-    .navigation a {
+    .nav a {
       position: relative;
-      padding-bottom: 5px;
     }
 
-    .navigation a::after {
+    .nav a::after {
       content: "";
 
       position: absolute;
 
       left: 0;
-      bottom: 0;
+      bottom: -5px;
 
       width: 0;
       height: 1px;
 
-      background: #111111;
+      background: #111;
 
       transition: width 0.3s ease;
     }
 
-    .navigation a:hover::after {
+    .nav a:hover::after {
       width: 100%;
     }
 
 
-    /* ==================================================
-       MAIN
-    ================================================== */
-
-    main {
-      width: 100%;
-    }
-
-
-    /* ==================================================
+    /* =========================================================
        HERO
-    ================================================== */
+    ========================================================= */
 
     .hero {
-      min-height: 100vh;
+      min-height: 72vh;
 
       padding:
-        160px 8vw
-        80px 8vw;
+        190px 9vw
+        90px 9vw;
 
       display: flex;
+
       flex-direction: column;
+
       justify-content: center;
 
       position: relative;
     }
 
-    .hero-title {
-      font-size: clamp(64px, 11vw, 170px);
+    .hero-name {
+      font-size: clamp(55px, 9vw, 135px);
 
       font-weight: 300;
 
-      letter-spacing: -0.07em;
+      letter-spacing: -0.075em;
 
-      line-height: 0.82;
+      line-height: 0.85;
     }
 
-    .hero-subtitle {
-      margin-top: 42px;
+    .hero-role {
+      margin-top: 34px;
 
-      font-size: 11px;
+      font-size: 10px;
 
-      letter-spacing: 0.28em;
+      letter-spacing: 0.25em;
+
+      color: #666;
 
       text-transform: uppercase;
-
-      color: #555555;
     }
 
-    .scroll-indicator {
+    .hero-scroll {
       position: absolute;
 
-      bottom: 40px;
-      left: 8vw;
+      left: 9vw;
+      bottom: 35px;
 
       font-size: 9px;
 
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
+
+      color: #888;
 
       text-transform: uppercase;
-
-      color: #777777;
     }
 
 
-    /* ==================================================
-       WORK SECTION
-    ================================================== */
+    /* =========================================================
+       WORKS AREA
+    ========================================================= */
 
-    .works-section {
-      padding: 130px 8vw 180px;
+    .works {
+      padding:
+        80px 9vw
+        170px 9vw;
     }
 
-    .category {
-      margin-bottom: 150px;
+
+    /* =========================================================
+       SECTION
+    ========================================================= */
+
+    .work-section {
+      margin-bottom: 130px;
     }
 
-    .category:last-child {
+    .work-section:last-child {
       margin-bottom: 0;
     }
 
-    .category-title {
-      margin-bottom: 38px;
+    .section-title {
+      margin-bottom: 36px;
 
-      font-size: clamp(30px, 4vw, 58px);
+      font-size: clamp(25px, 3vw, 42px);
 
       font-weight: 300;
 
@@ -220,291 +225,326 @@
       letter-spacing: -0.04em;
     }
 
-    .category-subtitle {
-      margin-left: 4px;
-      margin-bottom: 52px;
+    .section-subtitle {
+      margin-top: -22px;
 
-      font-size: 11px;
+      margin-bottom: 42px;
+
+      font-size: 9px;
 
       letter-spacing: 0.2em;
 
       text-transform: uppercase;
 
-      color: #777777;
+      color: #888;
     }
 
 
-    /* ==================================================
-       FILMED
-    ================================================== */
+    /* =========================================================
+       PROJECT GRID
+    ========================================================= */
 
-    .filmed-grid {
+    .project-grid {
       display: grid;
 
       grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(4, minmax(0, 1fr));
 
-      gap: 70px 9vw;
-
-      align-items: start;
+      gap: 48px 28px;
     }
 
-    .filmed-item {
+
+    /* =========================================================
+       PROJECT CARD
+    ========================================================= */
+
+    .project-card {
+      min-width: 0;
+    }
+
+
+    /* =========================================================
+       CLICKABLE CARD
+    ========================================================= */
+
+    .project-link {
       display: block;
 
-      width: 100%;
-
-      max-width: 460px;
-    }
-
-    .filmed-item:nth-child(2) {
-      margin-top: 90px;
-    }
-
-    .poster-frame {
-      width: 100%;
-
-      aspect-ratio: 2 / 3;
+      position: relative;
 
       overflow: hidden;
 
       background: #e9e7e2;
 
-      position: relative;
+      cursor: pointer;
     }
 
-    .poster-frame img {
+
+    /* =========================================================
+       IMAGE
+    ========================================================= */
+
+    .thumbnail {
+      position: relative;
+
+      width: 100%;
+
+      overflow: hidden;
+
+      background: #e9e7e2;
+    }
+
+    /*
+      FILMED用：
+      縦長ポスター
+    */
+
+    .thumbnail.poster {
+      aspect-ratio: 2 / 3;
+    }
+
+    /*
+      YouTube / Edit用：
+      横長
+    */
+
+    .thumbnail.landscape {
+      aspect-ratio: 16 / 9;
+    }
+
+    .thumbnail img {
       width: 100%;
       height: 100%;
 
       object-fit: cover;
 
       transition:
-        transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+        transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
     }
 
-    /*
-      FILMEDはクリック不可。
-      カーソルを合わせたときだけ少し拡大。
-    */
 
-    .filmed-item:hover .poster-frame img {
-      transform: scale(1.035);
+    /* =========================================================
+       HOVER IMAGE SCALE
+    ========================================================= */
+
+    .project-link:hover img {
+      transform: scale(1.04);
     }
 
-    .project-info {
-      margin-top: 18px;
+
+    /* =========================================================
+       HOVER OVERLAY
+    ========================================================= */
+
+    .project-overlay {
+      position: absolute;
+
+      inset: 0;
 
       display: flex;
-      justify-content: space-between;
 
-      gap: 30px;
+      justify-content: center;
+      align-items: center;
+
+      background: rgba(210, 210, 210, 0);
+
+      transition:
+        background 0.35s ease;
     }
 
-    .project-title {
+    .project-link:hover .project-overlay {
+      background: rgba(210, 210, 210, 0.48);
+    }
+
+
+    /* =========================================================
+       PLAY BUTTON
+    ========================================================= */
+
+    .play-button {
+      width: 52px;
+      height: 52px;
+
+      border: 1px solid rgba(20, 20, 20, 0.85);
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 12px;
+
+      color: #111;
+
+      background: rgba(250, 249, 246, 0.18);
+
+      opacity: 0;
+
+      transform: scale(0.86);
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .project-link:hover .play-button {
+      opacity: 1;
+
+      transform: scale(1);
+    }
+
+    .play-icon {
+      margin-left: 2px;
+    }
+
+
+    /* =========================================================
+       TEXT UNDER THUMBNAIL
+    ========================================================= */
+
+    .project-info {
+      padding-top: 14px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-start;
+
+      gap: 16px;
+    }
+
+    .project-name {
       font-family: "Shippori Mincho", serif;
 
-      font-size: 21px;
+      font-size: 14px;
 
       font-weight: 400;
 
       line-height: 1.5;
     }
 
-    .project-meta {
+    .project-details {
       flex-shrink: 0;
 
       text-align: right;
 
-      font-size: 9px;
+      font-size: 8px;
 
-      letter-spacing: 0.15em;
+      line-height: 1.7;
+
+      letter-spacing: 0.12em;
+
+      color: #888;
 
       text-transform: uppercase;
-
-      color: #777777;
-
-      line-height: 1.8;
     }
 
 
-    /* ==================================================
-       MUSIC VIDEO
-    ================================================== */
+    /* =========================================================
+       FILMED
+       ---------------------------------------------------------
+       FILMED is NOT clickable.
+       It only gets a subtle zoom on hover.
+    ========================================================= */
 
-    .music-video-item {
-      width: 100%;
-      max-width: 980px;
-    }
-
-    .video-wrapper {
-      width: 100%;
-
-      aspect-ratio: 16 / 9;
-
-      background: #e9e7e2;
+    .poster-only {
+      display: block;
 
       overflow: hidden;
 
-      position: relative;
+      background: #e9e7e2;
+
+      cursor: default;
     }
 
-    .video-wrapper iframe {
-      width: 100%;
-      height: 100%;
-
-      border: 0;
-
-      display: block;
+    .poster-only img {
+      transition:
+        transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
     }
 
-    .video-info {
-      margin-top: 20px;
-
-      display: flex;
-      justify-content: space-between;
-
-      align-items: flex-start;
-
-      gap: 30px;
-    }
-
-    .video-title {
-      font-family: "Shippori Mincho", serif;
-
-      font-size: 25px;
-
-      font-weight: 400;
+    .poster-only:hover img {
+      transform: scale(1.035);
     }
 
 
-    /* ==================================================
-       EDIT
-    ================================================== */
+    /* =========================================================
+       FILMED GRID
+    ========================================================= */
 
-    .edit-list {
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 0;
-    }
-
-    .edit-item {
+    .filmed-grid {
       display: grid;
 
       grid-template-columns:
-        80px
-        minmax(180px, 1fr)
-        auto;
+        repeat(4, minmax(0, 1fr));
 
-      align-items: center;
-
-      gap: 30px;
-
-      padding: 30px 0;
-
-      border-top: 1px solid #d5d3ce;
-
-      transition:
-        padding 0.35s ease;
-    }
-
-    .edit-item:last-child {
-      border-bottom: 1px solid #d5d3ce;
-    }
-
-    .edit-item:hover {
-      padding-left: 12px;
-      padding-right: 12px;
-    }
-
-    .edit-number {
-      font-size: 9px;
-
-      letter-spacing: 0.18em;
-
-      color: #888888;
-    }
-
-    .edit-title {
-      font-family: "Shippori Mincho", serif;
-
-      font-size: 23px;
-
-      font-weight: 400;
-    }
-
-    .edit-meta {
-      font-size: 9px;
-
-      letter-spacing: 0.16em;
-
-      text-transform: uppercase;
-
-      color: #777777;
+      gap: 48px 28px;
     }
 
 
-    /* ==================================================
+    /* =========================================================
        ABOUT
-    ================================================== */
+    ========================================================= */
 
-    .about-section {
+    .about {
       padding:
-        160px 8vw
-        180px 8vw;
+        150px 9vw
+        170px 9vw;
 
-      border-top: 1px solid #d5d3ce;
+      border-top: 1px solid #dad8d3;
     }
 
-    .about-title {
-      margin-bottom: 70px;
+    .about-heading {
+      margin-bottom: 75px;
 
-      font-size: 11px;
+      font-size: 10px;
 
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
 
       text-transform: uppercase;
+
+      color: #777;
     }
 
-    .about-lead {
-      max-width: 900px;
+    .about-statement {
+      max-width: 850px;
 
-      font-size: clamp(38px, 6vw, 82px);
+      font-size: clamp(35px, 5.6vw, 78px);
 
       font-weight: 300;
 
       letter-spacing: -0.055em;
 
-      line-height: 1.02;
+      line-height: 1.03;
     }
 
-    .about-text {
-      max-width: 570px;
+    .about-copy {
+      max-width: 530px;
 
-      margin-top: 70px;
+      margin-top: 65px;
 
-      font-size: 13px;
+      font-size: 12px;
 
       line-height: 2;
 
-      color: #555555;
+      color: #666;
     }
 
 
-    /* ==================================================
+    /* =========================================================
        CONTACT
-    ================================================== */
+    ========================================================= */
 
-    .contact-section {
-      min-height: 80vh;
+    .contact {
+      min-height: 72vh;
 
       padding:
-        130px 8vw
-        50px 8vw;
+        130px 9vw
+        35px 9vw;
 
-      border-top: 1px solid #d5d3ce;
+      border-top: 1px solid #dad8d3;
 
       display: flex;
 
@@ -513,20 +553,22 @@
       justify-content: space-between;
     }
 
-    .contact-title {
-      font-size: 11px;
+    .contact-heading {
+      font-size: 10px;
 
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
 
       text-transform: uppercase;
+
+      color: #777;
     }
 
-    .contact-mail {
+    .email {
       display: inline-block;
 
-      margin-top: 80px;
+      margin-top: 75px;
 
-      font-size: clamp(30px, 5vw, 72px);
+      font-size: clamp(28px, 4.7vw, 68px);
 
       font-weight: 300;
 
@@ -535,8 +577,8 @@
       transition: opacity 0.3s ease;
     }
 
-    .contact-mail:hover {
-      opacity: 0.5;
+    .email:hover {
+      opacity: 0.45;
     }
 
     .footer {
@@ -546,190 +588,168 @@
 
       align-items: flex-end;
 
-      font-size: 9px;
+      font-size: 8px;
 
-      letter-spacing: 0.16em;
+      letter-spacing: 0.15em;
 
       text-transform: uppercase;
 
-      color: #777777;
+      color: #888;
     }
 
 
-    /* ==================================================
-       IMAGE PLACEHOLDER
-    ================================================== */
-
-    /*
-      画像をまだアップロードしていない場合でも
-      ページ自体が崩れないようにする。
-    */
-
-    .image-placeholder {
-      width: 100%;
-      height: 100%;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      color: #999999;
-
-      font-size: 9px;
-
-      letter-spacing: 0.2em;
-
-      text-transform: uppercase;
-    }
-
-
-    /* ==================================================
+    /* =========================================================
        MOBILE
-    ================================================== */
+    ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .project-grid,
+      .filmed-grid {
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
+      }
+
+    }
+
 
     @media (max-width: 700px) {
 
       .header {
-        padding: 22px 20px;
+        padding: 21px 20px;
       }
 
-      .site-name {
-        font-size: 12px;
+      .logo {
+        font-size: 11px;
       }
 
-      .navigation {
+      .nav {
         gap: 15px;
 
         font-size: 8px;
       }
 
+
       .hero {
+        min-height: 75vh;
+
         padding:
           130px 20px
-          60px 20px;
+          70px 20px;
       }
 
-      .hero-title {
-        font-size: 21vw;
-
-        letter-spacing: -0.08em;
+      .hero-name {
+        font-size: 20vw;
       }
 
-      .hero-subtitle {
-        margin-top: 30px;
+      .hero-role {
+        margin-top: 25px;
 
-        font-size: 9px;
+        font-size: 8px;
 
-        letter-spacing: 0.2em;
+        letter-spacing: 0.18em;
       }
 
-      .scroll-indicator {
+      .hero-scroll {
         left: 20px;
+
         bottom: 25px;
       }
 
-      .works-section {
+
+      .works {
         padding:
-          90px 20px
+          70px 20px
           120px;
       }
 
-      .category {
-        margin-bottom: 110px;
+
+      .work-section {
+        margin-bottom: 100px;
       }
 
-      .category-title {
-        margin-bottom: 25px;
+      .section-title {
+        margin-bottom: 28px;
+
+        font-size: 31px;
       }
 
-      .category-subtitle {
-        margin-bottom: 35px;
+      .section-subtitle {
+        margin-top: -14px;
+
+        margin-bottom: 32px;
       }
 
+
+      .project-grid,
       .filmed-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
 
-        gap: 70px;
+        gap: 38px 15px;
       }
 
-      .filmed-item {
-        max-width: 82%;
-      }
-
-      .filmed-item:nth-child(2) {
-        margin-top: 0;
-        margin-left: auto;
-      }
 
       .project-info {
         flex-direction: column;
 
-        gap: 8px;
+        gap: 5px;
       }
 
-      .project-meta {
+      .project-details {
         text-align: left;
       }
 
-      .project-title {
-        font-size: 18px;
+      .project-name {
+        font-size: 12px;
       }
 
-      .video-title {
-        font-size: 21px;
+      .project-details {
+        font-size: 7px;
       }
 
-      .video-info {
-        flex-direction: column;
 
-        gap: 8px;
+      .play-button {
+        width: 44px;
+        height: 44px;
+
+        font-size: 10px;
       }
 
-      .edit-item {
-        grid-template-columns:
-          45px
-          1fr;
 
-        gap: 12px;
-      }
-
-      .edit-meta {
-        grid-column: 2;
-      }
-
-      .edit-title {
-        font-size: 18px;
-      }
-
-      .about-section {
+      .about {
         padding:
           100px 20px
           120px;
       }
 
-      .about-lead {
+      .about-heading {
+        margin-bottom: 50px;
+      }
+
+      .about-statement {
         font-size: 12vw;
       }
 
-      .about-text {
-        margin-top: 50px;
+      .about-copy {
+        margin-top: 45px;
 
-        font-size: 12px;
+        font-size: 11px;
       }
 
-      .contact-section {
+
+      .contact {
         min-height: 70vh;
 
         padding:
           100px 20px
-          30px;
+          25px;
       }
 
-      .contact-mail {
+      .email {
         margin-top: 50px;
 
-        font-size: 10vw;
+        font-size: 9vw;
       }
 
       .footer {
@@ -737,8 +757,9 @@
 
         align-items: flex-start;
 
-        gap: 12px;
+        gap: 10px;
       }
+
     }
 
   </style>
@@ -748,20 +769,17 @@
 <body>
 
 
-  <!-- ==================================================
+  <!-- =======================================================
        HEADER
-  ================================================== -->
+  ======================================================= -->
 
   <header class="header">
 
-    <a
-      href="#top"
-      class="site-name"
-    >
+    <a href="#top" class="logo">
       ISSA TSUJI
     </a>
 
-    <nav class="navigation">
+    <nav class="nav">
 
       <a href="#works">
         Works
@@ -781,29 +799,29 @@
 
 
 
-  <!-- ==================================================
+  <!-- =======================================================
        MAIN
-  ================================================== -->
+  ======================================================= -->
 
   <main id="top">
 
 
-    <!-- ==================================================
+    <!-- =====================================================
          HERO
-    ================================================== -->
+    ===================================================== -->
 
     <section class="hero">
 
-      <h1 class="hero-title">
+      <h1 class="hero-name">
         ISSA<br>
         TSUJI
       </h1>
 
-      <p class="hero-subtitle">
+      <p class="hero-role">
         Film / Cinematography
       </p>
 
-      <div class="scroll-indicator">
+      <div class="hero-scroll">
         Scroll ↓
       </div>
 
@@ -811,27 +829,24 @@
 
 
 
-    <!-- ==================================================
+    <!-- =====================================================
          WORKS
-    ================================================== -->
+    ===================================================== -->
 
-    <section
-      id="works"
-      class="works-section"
-    >
+    <section id="works" class="works">
 
 
-      <!-- ==================================================
+      <!-- ===================================================
            FILMED
-      ================================================== -->
+      =================================================== -->
 
-      <div class="category">
+      <div class="work-section">
 
-        <h2 class="category-title">
+        <h2 class="section-title">
           FILMED
         </h2>
 
-        <p class="category-subtitle">
+        <p class="section-subtitle">
           Indie Films
         </p>
 
@@ -841,19 +856,19 @@
 
           <!-- FILMED 01 -->
 
-          <div class="filmed-item">
+          <article class="project-card">
 
-            <div class="poster-frame">
+            <div class="poster-only thumbnail poster">
 
               <!--
-                ここにポスター画像を入れる。
+                =============================================
+                FILMED 01
 
-                ファイル名を
-                filmed-01.jpg
-                にしてください。
-
-                imagesフォルダに入れた場合：
+                画像：
                 images/filmed-01.jpg
+
+                FILMEDはクリックできません。
+                =============================================
               -->
 
               <img
@@ -862,42 +877,31 @@
                 onerror="this.style.display='none';"
               >
 
-              <div class="image-placeholder">
-                POSTER
-              </div>
-
             </div>
 
 
             <div class="project-info">
 
-              <h3 class="project-title">
-                今日の友は、<br>
-                明日の敵。
+              <h3 class="project-name">
+                今日の友は、明日の敵。
               </h3>
 
-              <div class="project-meta">
+              <div class="project-details">
                 Short Film<br>
                 2026
               </div>
 
             </div>
 
-          </div>
+          </article>
 
 
 
           <!-- FILMED 02 -->
 
-          <div class="filmed-item">
+          <article class="project-card">
 
-            <div class="poster-frame">
-
-              <!--
-                2枚目のポスター。
-                ファイル名：
-                filmed-02.jpg
-              -->
+            <div class="poster-only thumbnail poster">
 
               <img
                 src="images/filmed-02.jpg"
@@ -905,28 +909,87 @@
                 onerror="this.style.display='none';"
               >
 
-              <div class="image-placeholder">
-                POSTER
-              </div>
-
             </div>
 
 
             <div class="project-info">
 
-              <h3 class="project-title">
+              <h3 class="project-name">
                 Film Project
               </h3>
 
-              <div class="project-meta">
+              <div class="project-details">
                 Short Film<br>
                 2026
               </div>
 
             </div>
 
-          </div>
+          </article>
 
+
+
+          <!-- FILMED 03 -->
+
+          <article class="project-card">
+
+            <div class="poster-only thumbnail poster">
+
+              <img
+                src="images/filmed-03.jpg"
+                alt="Film Project"
+                onerror="this.style.display='none';"
+              >
+
+            </div>
+
+
+            <div class="project-info">
+
+              <h3 class="project-name">
+                Another Film
+              </h3>
+
+              <div class="project-details">
+                Film<br>
+                2026
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- FILMED 04 -->
+
+          <article class="project-card">
+
+            <div class="poster-only thumbnail poster">
+
+              <img
+                src="images/filmed-04.jpg"
+                alt="Film Project"
+                onerror="this.style.display='none';"
+              >
+
+            </div>
+
+
+            <div class="project-info">
+
+              <h3 class="project-name">
+                Film Project
+              </h3>
+
+              <div class="project-details">
+                Film<br>
+                2026
+              </div>
+
+            </div>
+
+          </article>
 
         </div>
 
@@ -934,64 +997,202 @@
 
 
 
-      <!-- ==================================================
+      <!-- ===================================================
            MUSIC VIDEO
-      ================================================== -->
+      =================================================== -->
 
-      <div class="category">
+      <div class="work-section">
 
-        <h2 class="category-title">
+        <h2 class="section-title">
           MUSIC VIDEO
         </h2>
 
 
-        <div class="music-video-item">
+        <div class="project-grid">
 
 
-          <div class="video-wrapper">
+          <!-- =================================================
+               MV 01
+               
+               ↓ ここが重要 ↓
 
-            <!--
-              ============================================
-              YOUTUBE VIDEO
+               画像を指定できる
+               YouTube本体は表示しない
 
-              下の VIDEO_ID を自分のMVのIDに変更。
+               カーソルを乗せる
+               ↓
+               少し拡大
+               ↓
+               薄いグレー
+               ↓
+               再生ボタン表示
+               ↓
+               クリックでYouTubeへ
+          ================================================== -->
 
-              例：
-              YouTubeのURLが
+          <article class="project-card">
 
-              https://www.youtube.com/watch?v=ABCDEFG123
-
-              なら、
-
-              VIDEO_ID = ABCDEFG123
-
-              ============================================
-            -->
-
-            <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID"
-              title="かなおり — Music Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-              loading="lazy"
+            <a
+              class="project-link"
+              href="https://www.youtube.com/watch?v=VIDEO_ID"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-            </iframe>
 
-          </div>
+              <div class="thumbnail landscape">
+
+                <!--
+                  MVのサムネイル画像。
+
+                  ここを変更：
+
+                  images/kanaori.jpg
+
+                  ↓
+
+                  自分の画像ファイル
+                -->
+
+                <img
+                  src="images/kanaori.jpg"
+                  alt="かなおり — Music Video"
+                  onerror="this.style.display='none';"
+                >
 
 
-          <div class="video-info">
+                <div class="project-overlay">
 
-            <h3 class="video-title">
-              かなおり
-            </h3>
+                  <div class="play-button">
 
-            <div class="project-meta">
-              Music Video<br>
-              2026
+                    <span class="play-icon">
+                      ▶
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </a>
+
+
+            <div class="project-info">
+
+              <h3 class="project-name">
+                かなおり
+              </h3>
+
+              <div class="project-details">
+                Music Video<br>
+                2026
+              </div>
+
             </div>
 
-          </div>
+          </article>
+
+
+
+          <!-- MV 02 -->
+
+          <article class="project-card">
+
+            <a
+              class="project-link"
+              href="https://www.youtube.com/watch?v=VIDEO_ID_02"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <div class="thumbnail landscape">
+
+                <img
+                  src="images/mv-02.jpg"
+                  alt="Music Video"
+                  onerror="this.style.display='none';"
+                >
+
+                <div class="project-overlay">
+
+                  <div class="play-button">
+                    <span class="play-icon">
+                      ▶
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </a>
+
+
+            <div class="project-info">
+
+              <h3 class="project-name">
+                Music Video
+              </h3>
+
+              <div class="project-details">
+                Music Video<br>
+                2026
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- MV 03 -->
+
+          <article class="project-card">
+
+            <a
+              class="project-link"
+              href="https://www.youtube.com/watch?v=VIDEO_ID_03"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <div class="thumbnail landscape">
+
+                <img
+                  src="images/mv-03.jpg"
+                  alt="Music Video"
+                  onerror="this.style.display='none';"
+                >
+
+                <div class="project-overlay">
+
+                  <div class="play-button">
+                    <span class="play-icon">
+                      ▶
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </a>
+
+
+            <div class="project-info">
+
+              <h3 class="project-name">
+                Music Video
+              </h3>
+
+              <div class="project-details">
+                Music Video<br>
+                2026
+              </div>
+
+            </div>
+
+          </article>
 
         </div>
 
@@ -999,53 +1200,119 @@
 
 
 
-      <!-- ==================================================
+      <!-- ===================================================
            EDIT
-      ================================================== -->
+      =================================================== -->
 
-      <div class="category">
+      <div class="work-section">
 
-        <h2 class="category-title">
+        <h2 class="section-title">
           EDIT
         </h2>
 
 
-        <div class="edit-list">
+        <div class="project-grid">
 
 
-          <div class="edit-item">
+          <!-- EDIT 01 -->
 
-            <span class="edit-number">
-              01
-            </span>
+          <article class="project-card">
 
-            <h3 class="edit-title">
-              編集作品集
-            </h3>
+            <a
+              class="project-link"
+              href="https://www.youtube.com/watch?v=EDIT_VIDEO_ID"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
 
-            <span class="edit-meta">
-              Edit / 2026
-            </span>
+              <div class="thumbnail landscape">
 
-          </div>
+                <img
+                  src="images/edit-01.jpg"
+                  alt="編集作品"
+                  onerror="this.style.display='none';"
+                >
+
+                <div class="project-overlay">
+
+                  <div class="play-button">
+                    <span class="play-icon">
+                      ▶
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </a>
 
 
-          <div class="edit-item">
+            <div class="project-info">
 
-            <span class="edit-number">
-              02
-            </span>
+              <h3 class="project-name">
+                編集作品集
+              </h3>
 
-            <h3 class="edit-title">
-              Documentary
-            </h3>
+              <div class="project-details">
+                Edit<br>
+                2026
+              </div>
 
-            <span class="edit-meta">
-              Edit / 2026
-            </span>
+            </div>
 
-          </div>
+          </article>
 
+
+
+          <!-- EDIT 02 -->
+
+          <article class="project-card">
+
+            <a
+              class="project-link"
+              href="https://www.youtube.com/watch?v=EDIT_VIDEO_ID_02"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <div class="thumbnail landscape">
+
+                <img
+                  src="images/edit-02.jpg"
+                  alt="編集作品"
+                  onerror="this.style.display='none';"
+                >
+
+                <div class="project-overlay">
+
+                  <div class="play-button">
+                    <span class="play-icon">
+                      ▶
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </a>
+
+
+            <div class="project-info">
+
+              <h3 class="project-name">
+                Documentary
+              </h3>
+
+              <div class="project-details">
+                Edit<br>
+                2026
+              </div>
+
+            </div>
+
+          </article>
 
         </div>
 
@@ -1056,65 +1323,55 @@
 
 
 
-    <!-- ==================================================
+    <!-- =====================================================
          ABOUT
-    ================================================== -->
+    ===================================================== -->
 
-    <section
-      id="about"
-      class="about-section"
-    >
+    <section id="about" class="about">
 
-      <h2 class="about-title">
+      <div class="about-heading">
         About
-      </h2>
+      </div>
 
 
-      <p class="about-lead">
+      <p class="about-statement">
         Turning emotions<br>
         into images.
       </p>
 
 
-      <p class="about-text">
-
+      <p class="about-copy">
         ISSA TSUJI is a filmmaker and cinematographer
         interested in translating human emotions into images.
-
         <br><br>
-
         Currently studying film and working on independent
         short films, music videos and documentary projects.
-
       </p>
 
     </section>
 
 
 
-    <!-- ==================================================
+    <!-- =====================================================
          CONTACT
-    ================================================== -->
+    ===================================================== -->
 
-    <section
-      id="contact"
-      class="contact-section"
-    >
+    <section id="contact" class="contact">
 
       <div>
 
-        <h2 class="contact-title">
+        <div class="contact-heading">
           Contact
-        </h2>
+        </div>
 
 
         <!--
-          メールアドレスをここに変更。
+          メールアドレスを変更してください。
         -->
 
         <a
+          class="email"
           href="mailto:YOUR-EMAIL@gmail.com"
-          class="contact-mail"
         >
           YOUR-EMAIL@gmail.com
         </a>
@@ -1138,7 +1395,6 @@
 
 
   </main>
-
 
 </body>
 </html>
